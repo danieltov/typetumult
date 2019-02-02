@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>_title_</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- CSS Files: First Normalize, then Local -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <script type="text/paperscript" canvas="myCanvas">
+    
+    
+    // FUNCTIONS 
+    
+    // Random color func
+    function randomColor(){
+      // pick a "red" from 0 - 255
+      var r = Math.floor(Math.random() * 256)
+      // pick a "green" from 0 - 255
+      var g = Math.floor(Math.random() * 256)
+      // pick a "blue" from 0 - 255
+      var b = Math.floor(Math.random() * 256)
+      // return + synthesize vars into single string "rgb(r, g, b)"
+      return "rgb(" + r + ", " + g + ", " + b + ")";
+    }
+
+    
+    for(var x = 0; x < $(window).width() + 20; x+= 20){
+      for(var y = 0; y < $(window).height() + 20; y+= 20){
+        var circle = new Path.Circle(new Point(x, y), 10);
+        circle.fillColor = randomColor();
+      }
+    }
+
+  </script>
+</head>
+
+<body>
+  <canvas id="myCanvas" data-paper-resize="true"></canvas>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>if (!window.jQuery) { document.write("<script src=\"https://code.jquery.com/jquery-3.2.1.min.js\"><\/script>"); }</script>
+  <script type="text/javascript" src="js/paper-full.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
