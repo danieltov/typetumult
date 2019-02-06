@@ -15,6 +15,16 @@ input {
   width: 50%;
   left: 0;
   right: 0;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 25% auto;
+  padding: 20px;
+  color: white;
+  font-size: 2rem;
+  font-weight: bolder;
+  background: none;
+  border: none;
+  text-align: center;
+}
+
+input:focus {
+  outline: none;
 }
